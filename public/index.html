@@ -12,10 +12,7 @@
         const btn = document.getElementById('btn');
         btn.addEventListener('click', () => 
             fetch('/.netlify/functions/hello')
-            .then(res => {
-                let responseText = await response.text();
-                return responseText;
-            })
+            .then(res => response.text())
             .then(res => {
                 const el = document.getElementById('response');
                 el.innerHTML = res;
