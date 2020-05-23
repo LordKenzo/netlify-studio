@@ -13,6 +13,7 @@
         btn.addEventListener('click', () => 
             fetch('/.netlify/functions/hello')
             .then(res => res.text())
+            .then(res => res)
             .then(res => {
                 const el = document.getElementById('response');
                 el.innerHTML = res;
