@@ -8,6 +8,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "figlet": "^1.4.0"
+    "change-case": "^4.1.1"
   }
 }
