@@ -14,7 +14,6 @@
             fetch('/.netlify/functions/hello')
             .then(res => {
                 const reader = res.body.getReader();
-                let reader = readableStream.getReader();
                 let utf8Decoder = new TextDecoder();
                 let nextChunk;
                 
