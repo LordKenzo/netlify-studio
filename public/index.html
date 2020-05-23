@@ -14,30 +14,18 @@
             fetch('/.netlify/functions/hello')
             .then(res => {
                 const reader = res.body.getReader();
-                const stream = new ReadableStream({
-                    start(controller) {
-                    // The following function handles each data chunk
-                    function push() {
-                        // "done" is a Boolean and value a "Uint8Array"
-                        reader.read().then(({ done, value }) => {
-                        // Is there no more data to read?
-                        if (done) {
-                            // Tell the browser that we have finished sending data
-                            controller.close();
-                            return;
-                        }
+                let reader = readableStream.getReader();
+                let utf8Decoder = new TextDecoder();
+                let nextChunk;
+                
+                let resultStr = '';
+                
+                while (!(nextChunk = await reader.read()).done) {
+                    let partialData = nextChunk.value;
+                    resultStr += utf8Decoder.decode(partialData);
+                }
 
-                        // Get the data and send it to the browser via the controller
-                        controller.enqueue(value);
-                        push();
-                        });
-                    };
-                    
-                    push();
-                    }
-                });
-
-                return new Response(stream, { headers: { "Content-Type": "text/html" } });
+                 return resultStr;
             })
             .then(res => {
                 const el = document.getElementById('response');
