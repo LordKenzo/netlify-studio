@@ -2,7 +2,7 @@ Ogni funzione serverless o lambda function ha questa signature:
 
 ```js
 exports.handler = function(event, context, callback) {
-    // your server-side functionality
+    // funzionalità server-side
 }
 ```
 
@@ -28,6 +28,8 @@ exports.handler = async (event) => {
   };
 };
 ```
+
+Posso usare librerie con npm? Certamente.
 
 L'**event** object rappresenta una serie di informazioni:
 
