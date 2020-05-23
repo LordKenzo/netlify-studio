@@ -13,7 +13,7 @@
         btn.addEventListener('click', () => 
             fetch('/.netlify/functions/hello')
             .then(res => {
-                const reader = response.body.getReader();
+                const reader = res.body.getReader();
                 const stream = new ReadableStream({
                     start(controller) {
                     // The following function handles each data chunk
