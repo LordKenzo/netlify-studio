@@ -1,4 +1,4 @@
-import { camelCase } from 'camel-case';
+const camelCase = require('camel-case');
 
 exports.handler = async (event) => {
   const subject = event.queryStringParameters.name || 'World';
