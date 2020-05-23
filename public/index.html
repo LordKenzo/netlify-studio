@@ -6,11 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <button id='btn' onClick="alert('ciao')">CallMe!</button>
+    <button id='btn'>CallMe!</button>
     <script>
         const btn = document.getElementById('btn');
-        btn.onclick = fetch('/.netlify/functions/hello')
-            .then(res => console.log('res', res));
+        btn.addEventListener('click', () => 
+            fetch('/.netlify/functions/hello')
+            .then(res => console.log('res', res)));
     </script>
 </body>
 </html>
