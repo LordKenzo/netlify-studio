@@ -1,10 +1,16 @@
-var figlet = require('figlet');
+const figlet = require('figlet');
 
-figlet('Hello World!!', function (err, data) {
-  if (err) {
-    console.log('Something went wrong...');
-    console.dir(err);
-    return;
-  }
-  console.log(data);
-});
+exports.handler = async (event) => {
+  const subject = event.queryStringParameters.name || 'World';
+  figlet(`Hello ${subject}!!`, function (err, data) {
+    if (err) {
+      console.log('Something went wrong...');
+      console.dir(err);
+      return;
+    }
+    return {
+      statusCode: 200,
+      body: `Hello ${subject}`,
+    };
+  });
+};
