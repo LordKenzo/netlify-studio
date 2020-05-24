@@ -1,4 +1,4 @@
-export async function loadPersons() {
+async function loadPersons() {
   const data = await fetch('/.netlify/functions/get-persons')
     .then((res) => res.json())
     .catch((err) => console.error(err));
