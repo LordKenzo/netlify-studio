@@ -3,7 +3,7 @@ async function loadPersons() {
     .then((res) => res.json())
     .catch((err) => console.error(err));
 
-  const persons = document.querySelector('persons');
+  const persons = document.querySelector('#persons');
 
   const pre = document.createElement('pre');
   pre.innerText = JSON.stringify(data, null, 2);

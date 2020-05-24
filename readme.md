@@ -78,19 +78,19 @@ Posso creare un file JSON con dei dati:
 ```json
 [
   {
-    nome: 'Lorenzo',
-    cognome: 'Franceschini',
-    citta: 'Ladispoli'
+    "nome": "Lorenzo",
+    "cognome": "Franceschini",
+    "citta": "Ladispoli"
   },
   {
-    nome: 'Giordano',
-    cognome: 'Franceschini',
-    citta: 'Roma'
+    "nome": "Giordano",
+    "cognome": "Franceschini",
+    "citta": "Roma"
   },
   {
-    nome: 'Maria',
-    cognome: 'Rossi',
-    citta: 'Torino  '
+    "nome": "Maria",
+    "cognome": "Rossi",
+    "citta": "Torino  "
   }
 ]
 ```
