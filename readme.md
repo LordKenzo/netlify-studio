@@ -51,5 +51,46 @@ Le funzioni devono risiedere in una cartella, solitamente la `functions` folder 
 
 ```
 [build]
-    functions = './functions
+  functions = './functions'
+```
+
+se ho un sito frontend da pubblicare:
+
+```
+[build]
+  publish = 'public'
+  functions = './functions'
+```
+
+se devo installare dei packages di npm:
+
+```
+[build]
+  publish = 'public'
+  command = 'npm i'
+  functions = './functions'
+```
+
+E' importante sapere che le functions vengono deployate in un ambiente a parte rispetto al deploy del progetto, per questo non possiamo far riferimento a file esterni alla folder `functions`.
+
+Posso creare un file JSON con dei dati:
+
+```json
+[
+  {
+    nome: 'Lorenzo',
+    cognome: 'Franceschini',
+    citta: 'Ladispoli'
+  },
+  {
+    nome: 'Giordano',
+    cognome: 'Franceschini',
+    citta: 'Roma'
+  },
+  {
+    nome: 'Maria',
+    cognome: 'Rossi',
+    citta: 'Torino  '
+  }
+]
 ```
