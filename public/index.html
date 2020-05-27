@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Functions in netlify</title>
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="js/load-persons.js"></script>
+    <script src="js/stripe-purchase.js"></script>
+    <script src="js/load-items.js"></script>
 </head>
 <body>
     <button id='btn'>CallMe!</button>
     <div id="response"></div>
     <button id="btnPersons">Load Persons</button>
     <div id="persons"></div>
+
+    <button id="btnItems">Load Items</button>
+    <div id="items"></div>
+
+    <template id="item">
+        <div class="item">
+            <img src="" alt="" />
+            <h2>name</h2>
+            <p class="description">description</p>
+            <p class="price">price</p>
+            <form action="" method="post">
+                <label for="quantity">Quantity</label>
+                <input  type="number" id="quantity" name="quantity" value="1" min="1" max="10" />
+                <input type="hidden" name="sku" value="" />
+                <button type="submit">Buy Now</button>
+            </form>
+        </div>
+    </template>
     <script>
         const btn = document.getElementById('btn');
         btn.addEventListener('click', () => 
@@ -22,7 +43,10 @@
                 el.innerHTML = res;
             }));
         const btnLoadPersons = document.getElementById('btnPersons');
-        btnLoadPersons.addEventListener('click', () => loadPersons())
+        btnLoadPersons.addEventListener('click', () => loadPersons());
+
+        const btnLoadItems = document.getElementById('btnItems');
+        btnLoadItems.addEventListener('click', () => loadItems('get-data?data=products', 'items'));
     </script>
 </body>
 </html>

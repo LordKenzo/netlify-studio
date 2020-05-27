@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "functions": "cd functions && npm i && cd ..",
+    "dev": "netlify dev",
+    "webhook": "stripe listen --forward-to localhost:8888/.netlify/functions/handle-purchase"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

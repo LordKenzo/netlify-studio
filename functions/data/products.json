@@ -1,0 +1,18 @@
+[
+    {
+        "sku": "LIBRO001",
+        "name": "Il tuo primo sito web",
+        "description": "Impara a creare il tuo primo sito web.",
+        "image": "https://images.unsplash.com/photo-1565538420870-da08ff96a207?auto=format&fit=crop&w=600&h=600&q=80",
+        "amount": 1500,
+        "currency": "EUR"
+    },
+    {
+        "sku": "LIBRO002",
+        "name": "Il tuo primo sito statico con Hugo e Gatsby",
+        "description": "Impara a creare il tuo primo sito web con un site generator.",
+        "image": "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80?auto=format&fit=crop&w=600&h=600&q=80",
+        "amount": 995,
+        "currency": "EUR"
+    }
+]
